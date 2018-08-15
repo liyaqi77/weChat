@@ -1,0 +1,61 @@
+/* pages/student/component/quiz.wxss */
+
+page {
+    width: 100%;
+    height: 100%;
+}
+
+.quiz {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 26rpx;
+}
+
+.quiz-title {
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #fff;
+    border-bottom: solid 15rpx #F1EFEF;
+    border-top: solid 15rpx #F1EFEF;
+}
+
+.quiz-title text {
+    padding: 0 15rpx;
+}
+
+.readyList {
+  padding: 5rpx 0;
+}
+
+.readyList .ask-items {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: solid 15rpx #eee;
+}
+.readyList .ask-items .ask text{
+  padding: 0 15rpx;
+}
+.readyList .ask-items .ask .unread{
+  width: 50rpx;
+  height: 35rpx;
+  text-align: center;
+  line-height: 35rpx;
+  background: #EA5D5D;
+  font-size: 24rpx;
+  border-radius: 3rpx;
+}
+.readyList .ask-items .ask .ask-tit{
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.readyState{
+  padding: 6rpx 0;
+}
+.readyState text{
+  padding: 0 10rpx;
+}
+.readyState .price {
+  color: orange;
+}

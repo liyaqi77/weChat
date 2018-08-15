@@ -1,0 +1,15 @@
+
+.account._3d26100{
+  padding: 5rpx 0;
+  font-size: 32rpx;
+}
+.account .ask-items._3d26100 {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: solid 2px #eee;
+  display: flex;
+  justify-content: space-around
+}
+.red._3d26100{
+    color: #f00;
+}

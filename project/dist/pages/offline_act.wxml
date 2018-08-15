@@ -1,0 +1,22 @@
+
+     <view class="pro _77364f6">
+        <view class="time-shift _77364f6">
+        <block  wx:for="{{list}}" wx:key="{{item}}" class="_77364f6">
+            <view class="act _77364f6">
+            <text class="_77364f6">{{item}}</text>
+            <text class="num _77364f6">{{index+1}}</text>
+            </view>
+        </block>
+        </view>  
+        <view class="inp _77364f6">
+          <block  wx:for="{{active}}" wx:key="*this" class="_77364f6">
+            <view class="items-inp _77364f6">
+                <text class="_77364f6">{{item}}</text>
+                <input class="_77364f6"/>
+            </view>
+          </block>
+        </view> 
+         <view class="foot _77364f6">
+    <navigator url="/pages/offline_act" class="_77364f6"><button class="_77364f6">提交审核</button></navigator>
+  </view> 
+     </view>

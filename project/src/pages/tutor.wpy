@@ -1,0 +1,39 @@
+<template>
+     <view class="content">
+     <!-- <view bindtap="onMusictap">{{!play?'播放':'暂停'}}</view> -->
+
+     </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Tutor extends wepy.page {
+  data = {
+    play: true
+  }
+  methods = {
+    onMusictap(e) {
+      var isPlayingMusic = this.play
+      if (isPlayingMusic) {
+        wepy.pauseBackgroundAudio()
+        this.play = false
+      } else {
+        wepy.playBackgroundAudio({
+          dataUrl: 'https://m10.music.126.net/20180813150513/f34ada4d3cf8b4554edd5d5cf10d578d/ymusic/5bd7/9ce7/88ae/ddfd712668977350181f320ecf2f2ae5.mp3',
+          title: 'Lost In Your Maze - Anzol / LuckyMaxx',
+          coverImgUrl: 'https://p1.music.126.net/-ygGeeu_NdRrDgfl1wEXfQ==/109951163161885717.jpg?imageView&thumbnail=360y360&quality=75&tostatic=0'
+        })
+        this.play = true
+        var that = this
+        wepy.onBackgroundAudioPlay(function() {
+          isPlayingMusic = true
+          that.play = false
+        })
+        wepy.onBackgroundAudioPause(function() {
+          isPlayingMusic = false
+          that.play = true
+        })
+      }
+    }
+  }
+}
+</script>

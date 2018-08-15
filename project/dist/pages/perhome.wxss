@@ -1,0 +1,17 @@
+@import "./../components/mine.wxss";
+@import "./../components/location.wxss";
+@import "./../components/job.wxss";
+@import "./../components/nickname.wxss";
+@import "./../components/up-photo.wxss";
+
+   .sketch{
+       border-bottom: solid 1rpx #ccc;
+    }
+    .sketch .direct{
+        height: 60rpx;
+        line-height:60rpx;
+        padding: 0 15rpx;
+    }
+    .sketch textarea{
+         text-indent: 15rpx;
+    }

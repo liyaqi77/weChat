@@ -1,0 +1,65 @@
+
+  <view class="student _30ec43e">
+    <view class="title-msg _30ec43e">
+        <view class="msg _30ec43e">
+            <view class="Johnny _30ec43e"><text class="_30ec43e">{{user.username}}</text> <text bindtap="editClick" class="_30ec43e">编辑</text> </view>
+            <view class="quantity _30ec43e">
+                <view class="bean _30ec43e">
+                    <text class="_30ec43e">{{user.bean}}</text>
+                    <text class="_30ec43e">粉丝</text>
+                </view>
+                <view class="bean _30ec43e">
+                    <text class="_30ec43e">{{user.attention}}</text>
+                    <text class="_30ec43e">关注</text>
+                </view>
+                <view class="bean _30ec43e" bindtap="incomeClick">
+                    <text class="text _30ec43e">￥{{user.income}}</text>
+                    <text class="_30ec43e">收入</text>
+                </view>
+            </view>
+        </view>
+        <view class="img _30ec43e">
+            <image class="user-pic _30ec43e" src="{{user.image}}"/>
+        </view>
+    </view>
+    <view class="title-con _30ec43e">
+        <view class="icon _30ec43e">
+            <icon class="iconfont icon-msnui-pos _30ec43e"/>
+            <text class="_30ec43e">{{user.loactionOne}}</text>
+        </view>
+        <view class="icon _30ec43e">
+            <icon class="iconfont icon-baozhuanhuan _30ec43e"/>
+            <text class="_30ec43e">{{user.loactionTwo}}</text>
+        </view>
+        <view class="icon _30ec43e">
+            <icon class="iconfont icon-hezi101 _30ec43e"/>
+            <text class="_30ec43e">{{user.loactionThree}}</text>
+        </view>
+    </view>
+    <view class="apply-for _30ec43e">
+        <text class="_30ec43e">申请为导师，帮助更多人成长</text>
+        <button bindtap="applyfor" class="_30ec43e" data-wpyapplyfor-a="申请成为导师">立即申请</button>
+    </view>
+    <view class="issue _30ec43e">
+    <view class="issue-item _30ec43e" bindtap="jump" data-wpyjump-a="my_question">
+      <text class="_30ec43e">我的提问 <text class="red _30ec43e">2个新回答</text></text>
+    <icon class="iconfont icon-jiantou _30ec43e"/>
+    </view>
+     <view class="issue-item _30ec43e" bindtap="jump" data-wpyjump-a="my_tutor">
+      <text class="_30ec43e">我的导师 <text class="red _30ec43e">2个可见</text></text>
+    <icon class="iconfont icon-jiantou _30ec43e"/>
+    </view>
+     <view class="issue-item _30ec43e" bindtap="jump" data-wpyjump-a="my_collect">
+      <text class="_30ec43e">我的收藏 <text class="red _30ec43e"/></text>
+    <icon class="iconfont icon-jiantou _30ec43e"/>
+    </view>
+     <view class="issue-item _30ec43e" bindtap="jump" data-wpyjump-a="my_action">
+      <text class="_30ec43e">我的动态 <text class="red _30ec43e"/></text>
+    <icon class="iconfont icon-jiantou _30ec43e"/>
+    </view>
+      <view class="issue-item _30ec43e" bindtap="jump" data-wpyjump-a="meet_mine">
+      <text class="_30ec43e">相见我的人 <text class="red _30ec43e"/></text>
+    <icon class="iconfont icon-jiantou _30ec43e"/>
+    </view>
+    </view>
+</view>

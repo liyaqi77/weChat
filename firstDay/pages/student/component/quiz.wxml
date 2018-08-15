@@ -1,0 +1,20 @@
+<!--pages/student/component/quiz.wxml-->
+<view class="quiz">
+<view class='quiz-title'>
+<text bindtap='er'>已回复</text>
+<text>未回复</text>
+</view>
+<view class='readyList'>
+  <view class='ask-items'>
+    <view class='ask'> 
+    <text class='unread'>未读</text>
+    <text class='ask-tit'>什么是绝对地址和相对地址？</text>
+    </view>
+    <view class='readyState'>
+    <text class="price">$20</text>
+    <text>已回复</text>
+    <text>精华</text>
+    </view>
+  </view>
+</view>
+</view>

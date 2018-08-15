@@ -1,0 +1,49 @@
+<!--pages/student/user.wxml-->
+<view class="student">
+    <view class='title-msg'>
+        <view class='msg'>
+            <view class='Johnny'><text>{{user.username}}</text> <text>编辑</text> </view>
+            <view class='quantity'>
+                <view class='bean'>
+                    <text>{{user.bean}}</text>
+                    <text>粉丝</text>
+                </view>
+                <view class='bean'>
+                    <text>{{user.attention}}</text>
+                    <text>关注</text>
+                </view>
+            </view>
+        </view>
+        <view class='img'>
+            <image class='user-pic' src="{{user.image}}"></image>
+        </view>
+    </view>
+    <view class='title-con'>
+        <view class='icon'>
+            <icon class='iconfont icon-msnui-pos'></icon>
+            <text>{{user.loactionOne}}</text>
+        </view>
+        <view class='icon'>
+            <icon class='iconfont icon-baozhuanhuan'></icon>
+            <text>{{user.loactionTwo}}</text>
+        </view>
+        <view class='icon'>
+            <icon class='iconfont icon-hezi101'></icon>
+            <text>{{user.loactionThree}}</text>
+        </view>
+    </view>
+    <view class='apply-for'>
+        <text>申请为导师，帮助更多人成长</text>
+        <navigator url='/pages/student/apply' hover-class='navigator-hover'><button >立即申请</button>
+    </navigator>
+    </view>
+    <view class="issue">
+    <view class='issue-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='jump' data-index="{{index}}" data-context="{{item.list}}">
+      <text>{{item.ask}}  <text class="red">{{item.answer}}</text></text>
+    <icon class='iconfont icon-jiantou'></icon>
+    </view>
+ 
+  
+    
+    </view>
+</view>

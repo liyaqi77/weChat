@@ -1,0 +1,62 @@
+@import "./../components/tab-tutor.wxss";
+
+page._1c03450 {
+    width: 100%;
+    height: 100%;
+}
+.quiz._1c03450 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 30rpx;
+}
+
+.quiz-title._1c03450 {
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #fff;
+    border-bottom: solid 15rpx #F1EFEF;
+    border-top: solid 15rpx #F1EFEF;
+}
+
+.quiz-title text._1c03450 {
+    padding: 0 15rpx;
+}
+.active_items._1c03450{
+    color: #f00;
+}
+.readyList._1c03450 {
+  padding: 5rpx 0;
+}
+
+.readyList .ask-items._1c03450 {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: solid 15rpx #eee;
+}
+.readyList .ask-items .ask text._1c03450{
+  padding: 0 15rpx;
+}
+.readyList .ask-items .ask .unread._1c03450{
+  width: 50rpx;
+  height: 35rpx;
+  text-align: center;
+  line-height: 35rpx;
+  background: #EA5D5D;
+  font-size: 24rpx;
+  border-radius: 3rpx;
+}
+.readyList .ask-items .ask .ask-tit._1c03450{
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.readyState._1c03450{
+  padding: 6rpx 0;
+}
+.readyState text._1c03450{
+  padding: 0 10rpx;
+}
+.readyState .price._1c03450 {
+  color: orange;
+}

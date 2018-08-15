@@ -1,0 +1,35 @@
+<template>
+    <view class="job">
+        <view><text>职位:</text></view>
+        <view><input></input></view>
+        <view><button>确定</button></view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Job extends wepy.component {
+  props = {}
+  methods = {}
+  config = {
+    navigationBarTitleText: '职位'
+  }
+}
+</script>
+<style scoped>
+.job{
+    display: flex;
+    width: 100%;
+    height: 90rpx;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 32rpx;
+}
+.job view input{
+    border: solid 1rpx #ccc;
+    width:80%;
+}
+.job button{
+    width:150rpx;
+    font-size: 28rpx;
+}
+</style>

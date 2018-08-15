@@ -1,0 +1,29 @@
+
+     <view class="meet-tutor _9fb875a">
+  <block  wx:for="{{list}}" wx:key="{{item.id}}" class="_9fb875a">
+    <view class="meet-items _9fb875a" bindtap="issueitems" data-id="{{item.id}}">
+    <view class="meet-pic _9fb875a"> 
+    <image class="user-pic _9fb875a" src="{{item.img}}"/>
+    </view>
+    <view class="meet-msg _9fb875a">
+      <view class="tit_user _9fb875a">
+        <text class="tit_name _9fb875a">{{item.title}}</text> 
+        <text class="tit_work _9fb875a">{{item.jobtitle}}</text>
+      </view>
+      <view class="tit_num _9fb875a">
+        <text class="_9fb875a">{{item.asknum}}回答</text>
+        <text class="_9fb875a">{{item.fans}}粉丝</text>
+        <text class="_9fb875a">{{item.meetnum}}相见</text>
+      </view>
+      <view class="tit_issue _9fb875a">
+        <text class="skil _9fb875a">{{item.question}}</text>
+        <text class="skil _9fb875a">{{item.addres}}:</text>
+        <text class="{{item.isRead?'yue':'none'}} _9fb875a"><text class="iconsmall _9fb875a">{{item.essence}}</text>{{item.dateadd}}</text>
+      </view>
+    </view>
+    </view>
+  </block>
+  <view class="foot _9fb875a">
+    <navigator url="/pages/offline_act" class="_9fb875a"><button class="_9fb875a">发起线下活动</button></navigator>
+  </view>
+   </view>

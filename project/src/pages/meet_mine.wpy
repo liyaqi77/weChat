@@ -1,0 +1,169 @@
+<template>
+     <view class='meet-tutor'>
+  <block wx:for="{{list}}" wx:key="{{item.id}}">
+    <view class='meet-items' bindtap="issueitems" data-id="{{item.id}}">
+    <view class='meet-pic'> 
+    <image class='user-pic' src="{{item.img}}"></image>
+    </view>
+    <view class='meet-msg'>
+      <view class="tit_user">
+        <text class="tit_name">{{item.title}}</text> 
+        <text class="tit_work">{{item.jobtitle}}</text>
+      </view>
+      <view class="tit_num">
+        <text>{{item.asknum}}回答</text>
+        <text>{{item.fans}}粉丝</text>
+        <text>{{item.meetnum}}相见</text>
+      </view>
+      <view class="tit_issue">
+        <text class="skil">{{item.question}}</text>
+        <text class="skil">{{item.addres}}:</text>
+        <text class="{{item.isRead?'yue':'none'}}"><text class="iconsmall">{{item.essence}}</text>{{item.dateadd}}</text>
+      </view>
+    </view>
+    </view>
+  </block>
+  <view class="foot">
+    <navigator url="/pages/offline_act"><button>发起线下活动</button></navigator>
+  </view>
+   </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  props= {}
+  config = {
+    navigationBarTitleText: '相见我的人'
+  }
+  data={
+    list: [
+      {
+        id: '123450',
+        title: 'Johony',
+        jobtitle: '阿里巴巴资深前端工程师',
+        asknum: '158',
+        fans: '1000',
+        meetnum: '1000',
+        isRead: false,
+        question: '给年轻学者的基本网络技巧:',
+        addres: 'Google scholar页面',
+        dateadd: '10月11日下午2点北京，点击报名',
+        essence: '约',
+        img: '../images/pic.jpg'
+      },
+      {
+        id: '123450',
+        title: 'Johony',
+        jobtitle: '阿里巴巴资深前端工程师',
+        asknum: '158',
+        fans: '1000',
+        meetnum: '1000',
+        isRead: false,
+        question: '给年轻学者的基本网络技巧:',
+        addres: 'Google scholar页面',
+        dateadd: '10月11日下午2点北京，点击报名',
+        essence: '约',
+        img: '../images/pic.jpg'
+      },
+      {
+        id: '123450',
+        title: 'Johony',
+        jobtitle: '阿里巴巴资深前端工程师',
+        asknum: '158',
+        fans: '1000',
+        meetnum: '1000',
+        isRead: false,
+        question: '给年轻学者的基本网络技巧:',
+        addres: 'Google scholar页面',
+        dateadd: '10月11日下午2点北京，点击报名',
+        essence: '约',
+        img: '../images/pic.jpg'
+      }
+    ]
+  }
+}
+</script>
+<style scoped>
+.meet-tutor{
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+  width: 100%;
+}
+.meet-tutor .meet-items{
+  display: flex;
+  padding: 15rpx 0;
+  border-bottom: solid 15rpx #F1EFEF;
+}
+ .meet-items .meet-pic{
+   width: 20%;
+   padding: 5rpx 0;
+   display: flex;
+   align-items: center;
+ }
+.meet-items .meet-pic .user-pic{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%; 
+  margin: 0 auto;
+  display: block;
+}
+  .meet-items .meet-msg{
+   width: 80%;
+ }
+ .tit_user text{
+   margin: 0 15rpx;
+ }
+.tit_user .tit_name{
+ font-size: 35rpx;
+ }
+ .tit_user .tit_work{
+ color: #ccc;
+ }
+ .meet-msg .tit_num text{
+   padding: 10rpx 15rpx;
+   color: #ccc;
+ }
+ .meet-msg .tit_issue{
+   padding:  0 15rpx;
+ }
+ .meet-msg .tit_issue .skil{
+   padding: 6rpx 0;
+   font-size: 33rpx;
+   color: #000;
+   display: inline-block;
+ }
+  .meet-msg .tit_issue .yue{
+   padding: 6rpx 0;
+   font-size:26rpx;
+   color: #f00;
+   display: inline-block;
+ }
+ .tit_issue .yue .iconsmall{
+   display: inline-block;
+   width: 35rpx;
+   height: 35rpx;
+   background: #f00;
+   text-align: center;
+   line-height: 35rpx;
+   color: #fff;
+ }
+
+.foot{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 30rpx;
+
+ }
+ .foot button{
+   width: 100%;
+   border: none;
+   background: #c97a0e;
+   height: 100rpx;
+   color: #fff;
+   font-size: 35rpx;
+   line-height: 100rpx;
+ }
+</style>

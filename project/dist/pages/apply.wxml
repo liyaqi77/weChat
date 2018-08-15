@@ -1,0 +1,35 @@
+
+    <view class="apply">
+        <view class="title">
+            <text class="black">工作履历</text>
+            <text class="gray">请如实填写，否则无法通过审核</text>
+        </view>
+        <view class="partname">
+              <view class="lange">
+                <text>当前公司名称</text>
+                <input/>
+              </view>
+              <view class="shot">
+                <text>职位</text>
+                <input/>
+              </view>
+             <view class="lange">
+                <text>前任公司名称</text>
+                <input/>
+              </view>
+              <view class="shot">
+                <text>职位</text>
+                <input/>
+              </view>
+              <view class="lange">
+                <text>工作年限</text>
+                <input/>
+              </view>
+        </view>
+
+        <view class="sketch">
+            <view class="direct">自我简介(20-300字)</view>
+            <textarea id="" cols="30" rows="10" placeholder="详细的自我介绍,有助于快速通过审核"/>
+        </view>
+        <view class="btn"><button>提交申请</button></view>
+    </view>

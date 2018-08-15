@@ -1,0 +1,134 @@
+<template>
+  <view class="hotel">
+    <swiper class="swiper" indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item class="swiper-item">
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="position">
+    <view class="left_choose" bindtap="citylist('选择城市')">
+      <view class="choose">
+       <text class="destination">目的地</text><text>{{cityname}}</text>
+      </view>
+      <text class="iconfont">></text>
+    </view>
+    <view class="right_box" bindtap="location">
+      <text>⚪</text>
+      <text>当前位置</text>
+    </view>
+  </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import QQMapWX from '../libs/qqmap-wx-jssdk.js'
+export default class Index extends wepy.page {
+  props= {}
+  data={
+    imgUrls: [
+      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    ],
+    indicatorDots: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 1000,
+    cityname: '北京'
+  }
+  methods={
+    citylist(path) {
+      wepy.navigateTo({
+        url: '/pages/citychoose?title=' + path
+      })
+    },
+    location() {
+      let qqmapsdk
+      qqmapsdk = new QQMapWX({
+        key: 'CTOBZ-4JBCP-WSPDE-VXYAN-ZS2B7-TIBQ4'
+      })
+      qqmapsdk.search({
+        keyword: '中国',
+        success: function (res) {
+          this.cityname = res.data[0].ad_info.city
+          console.log(this.cityname)
+        },
+        fail: function (res) {
+          console.log(res)
+        },
+        complete: function (res) {
+          console.log(res)
+        }
+      })
+    }
+  }
+  onLoad(options) {
+    let cityname = options.titname
+    this.cityname = cityname
+    wepy.getSetting({
+      success: (res) => {
+        console.log(res)
+      }
+    })
+  }
+}
+</script>
+<style>
+.hotel{
+  font-size: 32rpx;
+}
+.swiper-item image{
+  width:100%;
+  height:320rpx;
+  display:block;
+  overflow:hidden;
+}
+.position{
+  padding: 15rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+.left_choose{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15rpx;
+  font-size: 28rpx;
+  border-bottom: solid 1rpx #ccc;
+
+}
+.left_choose .choose{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.left_choose .iconfont,
+.left_choose .destination{
+ color: #ccc;
+ padding: 10rpx 0;
+}
+
+.right_box{
+  width:120rpx;
+  height:90rpx;
+  display: block;
+  border: solid 1rpx #4289ff;
+  border-radius: 5rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 24rpx;
+  align-items: center;
+  color: #4289ff;
+}
+.right_box text{
+  padding:  5rpx 0;
+}
+
+</style>

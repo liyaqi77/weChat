@@ -1,0 +1,25 @@
+
+    <view class="capital">
+       <view class="earning">
+           <text class="balance">账户余额</text>
+           <text class="red">￥200</text>
+           <text class="white">提现</text>
+       </view>
+       <view class="tabClick">
+           <block  wx:for="{{content}}" wx:key="{{item.id}}">
+       <text id="{{index}}" data-list="{{item.list}}" class="{{activeIndex==index?'active_items':''}}" bindtap="tabClick">{{item.tabs}}</text>
+    </block>
+       </view>
+       
+    <view class="nick _3d26100">
+    <view class="account _3d26100">
+     <block  wx:for="{{$tabIncome$content}}" wx:key="{{item}}" class="_3d26100">
+         <view class="ask-items _3d26100">
+             <text class="red _3d26100">{{item.money}}</text>
+             <text class="_3d26100">{{item.title}}</text>
+             <text class="_3d26100">{{item.ask}}</text>
+            </view>
+     </block>
+    </view>
+    </view>
+    </view>

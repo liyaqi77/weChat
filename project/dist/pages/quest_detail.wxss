@@ -1,0 +1,61 @@
+
+.detail_box._7989b7a{
+    width: 100%;
+    height: 100%;
+    font-size: 30rpx;
+    box-sizing: border-box;
+}
+
+.detail_box .titdeta._7989b7a{
+height: 80rpx;
+line-height: 80rpx;
+border:solid 1rpx #ccc;
+text-indent: 10rpx;
+font-weight: bold;
+}
+.detail_box .author._7989b7a{
+  height: 80rpx;
+  line-height: 80rpx;
+  align-items: center;
+  display: flex;
+}
+.image._7989b7a{
+  width: 60rpx;
+  height: 60rpx;
+  background: #ccc;
+  margin: 0 15rpx;
+}
+.detail_box .foot._7989b7a{
+    width: 100%;
+    height: 120rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    background: #fff;
+}
+.detail_box .foot .left._7989b7a{
+    width: 35%;
+    height: 100%;
+    padding: 15rpx 15rpx; 
+}
+.left text._7989b7a{
+    text-align: center;
+}
+.right._7989b7a{
+    width: 65%;
+    height: 100%;
+    display: flex;
+}
+.items._7989b7a{
+    display:block;
+    width: 60rpx;
+    height: 60rpx;
+    background: #eee;
+    margin: 20rpx 15rpx;
+    border-radius: 50%;
+}
+.activeIndex._7989b7a{
+     background: #ff0;
+}
+

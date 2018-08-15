@@ -1,0 +1,24 @@
+
+.compile._403c8fc{
+    width: 100%;
+    height: 100%;
+    background: #efefef;
+    font-size: 32rpx;
+}
+.comp-item._403c8fc{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-top:solid 25rpx #efefef;
+}
+
+.list_item._403c8fc{
+ border-top:solid 10rpx #eee;
+}
+.weui-cell__ft_in-access._403c8fc:nth-child(2){
+  margin-right:15rpx;
+}
+.img._403c8fc{
+  width: 80rpx;
+  height: 80rpx;
+}

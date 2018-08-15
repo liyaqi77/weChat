@@ -1,0 +1,221 @@
+<template>
+<view class="quiz">
+   <view class='quiz-title'>
+     <block  wx:for="{{content}}"  wx:key="{{item.id}}">
+       <text id="{{index}}" data-list="{{item.list}}" class="{{activeIndex==index?'active_items':''}}" bindtap="tabClick">{{item.tabs}}</text>
+    </block>
+   </view>
+   <TabTutor :content.sync="initdata"></TabTutor>
+</view>
+</template>
+<script>
+import wepy from 'wepy'
+import TabTutor from '../components/tab-tutor'
+export default class Index extends wepy.page {
+  config = {};
+  components={
+    TabTutor
+  }
+  data = {
+    activeIndex: 0,
+    list: [],
+    initdata: null,
+    content: [{
+      tabs: '我想见的',
+      list: [
+        {
+          id: '123450',
+          title: 'Johony',
+          jobtitle: '阿里巴巴资深前端工程师',
+          asknum: '158',
+          fans: '1000',
+          meetnum: '1000',
+          isRead: true,
+          question: '给年轻学者的基本网络技巧:',
+          addres: 'Google scholar页面',
+          dateadd: '10月11日下午2点北京，点击报名',
+          essence: '约',
+          img: '../images/pic.jpg'
+        },
+        {
+          id: '123450',
+          title: 'Johony',
+          jobtitle: '阿里巴巴资深前端工程师',
+          asknum: '158',
+          fans: '1000',
+          meetnum: '1000',
+          isRead: false,
+          question: '给年轻学者的基本网络技巧:',
+          addres: 'Google scholar页面',
+          dateadd: '10月11日下午2点北京，点击报名',
+          essence: '约',
+          img: '../images/pic.jpg'
+        },
+        {
+          id: '123450',
+          title: 'Johony',
+          jobtitle: '阿里巴巴资深前端工程师',
+          asknum: '158',
+          fans: '1000',
+          meetnum: '1000',
+          isRead: false,
+          question: '给年轻学者的基本网络技巧:',
+          addres: 'Google scholar页面',
+          dateadd: '10月11日下午2点北京，点击报名',
+          essence: '约',
+          img: '../images/pic.jpg'
+        },
+        {
+          id: '123450',
+          title: 'Johony',
+          jobtitle: '阿里巴巴资深前端工程师',
+          asknum: '158',
+          fans: '1000',
+          meetnum: '1000',
+          isRead: false,
+          question: '给年轻学者的基本网络技巧:',
+          addres: 'Google scholar页面',
+          dateadd: '10月11日下午2点北京，点击报名',
+          essence: '约',
+          img: '../images/pic.jpg'
+        }]
+    },
+    {
+      tabs: '约见记录',
+      list: [
+        {
+          id: '123450',
+          title: 'Johony',
+          jobtitle: '阿里巴巴资深前端工程师',
+          asknum: '158',
+          fans: '1000',
+          meetnum: '1000',
+          isRead: false,
+          question: '给年轻学者的基本网络技巧:',
+          addres: 'Google scholar页面',
+          dateadd: '10月11日下午2点北京，点击报名',
+          essence: '精华',
+          img: '../images/pic.jpg'
+        },
+        {
+          id: '123450',
+          title: 'Johony',
+          jobtitle: '阿里巴巴资深前端工程师',
+          asknum: '158',
+          fans: '1000',
+          meetnum: '1000',
+          isRead: false,
+          question: '给年轻学者的基本网络技巧:',
+          addres: 'Google scholar页面',
+          dateadd: '10月11日下午2点北京，点击报名',
+          essence: '精华',
+          img: '../images/pic.jpg'
+        },
+        {
+          id: '123450',
+          title: 'Johony',
+          jobtitle: '阿里巴巴资深前端工程师',
+          asknum: '158',
+          fans: '1000',
+          meetnum: '1000',
+          isRead: false,
+          question: '给年轻学者的基本网络技巧:',
+          addres: 'Google scholar页面',
+          dateadd: '10月11日下午2点北京，点击报名',
+          essence: '精华',
+          img: '../images/pic.jpg'
+        },
+        {
+          id: '123450',
+          title: 'Johony',
+          jobtitle: '阿里巴巴资深前端工程师',
+          asknum: '158',
+          fans: '1000',
+          meetnum: '1000',
+          isRead: false,
+          question: '给年轻学者的基本网络技巧:',
+          addres: 'Google scholar页面',
+          dateadd: '10月11日下午2点北京，点击报名',
+          essence: '精华',
+          img: '../images/pic.jpg'
+        }]
+    }]
+  }
+  methods={
+    tabClick(e) {
+      let current = e.currentTarget.id || 0
+      this.initdata = e.currentTarget.dataset.list
+      this.activeIndex = current
+    }
+  }
+  onLoad (options) {
+    let title = options.title
+    wepy.setNavigationBarTitle({
+      title: title
+    })
+    this.initdata = this.content[this.activeIndex].list
+  }
+}
+</script>
+<style scoped>
+page {
+    width: 100%;
+    height: 100%;
+}
+.quiz {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 30rpx;
+}
+
+.quiz-title {
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #fff;
+    border-bottom: solid 15rpx #F1EFEF;
+    border-top: solid 15rpx #F1EFEF;
+}
+
+.quiz-title text {
+    padding: 0 15rpx;
+}
+.active_items{
+    color: #f00;
+}
+.readyList {
+  padding: 5rpx 0;
+}
+
+.readyList .ask-items {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: solid 15rpx #eee;
+}
+.readyList .ask-items .ask text{
+  padding: 0 15rpx;
+}
+.readyList .ask-items .ask .unread{
+  width: 50rpx;
+  height: 35rpx;
+  text-align: center;
+  line-height: 35rpx;
+  background: #EA5D5D;
+  font-size: 24rpx;
+  border-radius: 3rpx;
+}
+.readyList .ask-items .ask .ask-tit{
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.readyState{
+  padding: 6rpx 0;
+}
+.readyState text{
+  padding: 0 10rpx;
+}
+.readyState .price {
+  color: orange;
+}
+</style>

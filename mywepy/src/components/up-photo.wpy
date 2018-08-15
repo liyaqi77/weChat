@@ -1,0 +1,45 @@
+<template>
+   <view class="section">
+   <view bindtap="chooseImage">上传图片</view>
+    <image src="{{files}}" ></image>
+   </view>
+
+</template>
+<script>
+import wepy from 'wepy'
+export default class Upphoto extends wepy.component {
+  props = {}
+  data = {
+    files: '../images/pic.jpg'
+  }
+  
+  methods = {
+    bindFormSubmit: function(e) {
+      console.log(e.detail.value.textarea)
+    },
+    chooseImage: function() {
+      var that = this
+      wepy.chooseImage({
+        count: 1, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+          var tempFilePaths = res.tempFilePaths
+          that.files = tempFilePaths[0]
+          console.log(that.files)
+          that.$apply()
+        }
+      })
+    }
+  }
+}
+</script>
+<style>
+.section{
+    border-bottom: solid 1rpx #ccc;
+}
+.section textarea{
+    text-indent: 15rpx;
+}
+</style>

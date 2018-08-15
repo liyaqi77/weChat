@@ -1,0 +1,16 @@
+/**index.wxss**/
+
+.imgbig{
+  height: 500rpx; width: 500rpx;
+}
+.smallbig{
+  height: 73rpx; width: 73rpx; background: blue;
+}
+/* .parent{
+  position: relative;
+}
+.box{
+  position: absolute;
+  top: 215rpx;
+  left: 282rpx;
+} */

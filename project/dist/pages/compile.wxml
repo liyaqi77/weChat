@@ -1,0 +1,34 @@
+
+ <view class="compile _403c8fc">
+    <view class="comp-item _403c8fc">
+      <block  wx:for="{{editresult}}" wx:key="{{item}}" class="_403c8fc">
+        <navigator url="/pages/perhome?id={{editTmp[index][1]}}" class="weui-cell weui-cell_access _403c8fc" hover-class="weui-cell_active">
+          <view class="weui-cell__bd _403c8fc">{{editTmp[index][0]}}</view>
+          <view class="weui-cell__hd _403c8fc">
+              <image src="{{item.img}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;" class="_403c8fc"/>
+          </view>
+          <image class="weui-cell__ft weui-cell__ft_in-access img _403c8fc" wx:if="{{index==='imageUrl'}}" src="{{item}}"/>
+          <view class="weui-cell__ft weui-cell__ft_in-access _403c8fc" wx:else>{{item}}</view>
+        </navigator>
+        </block>
+    <view class="list_item _403c8fc">
+      <picker bindchange="bindPicker" value="{{ind}}" range="{{interest}}" class="_403c8fc">
+        <view class="weui-cell weui-cell_access _403c8fc" hover-class="weui-cell_active">
+        <view class="weui-cell__bd _403c8fc">兴趣领域</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access _403c8fc">{{hobby}}</view>
+      </view>
+      </picker>
+    </view>
+    <view class="list_item _403c8fc">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="_403c8fc">
+        <view url="" class="weui-cell weui-cell_access _403c8fc" hover-class="weui-cell_active">
+          <view class="weui-cell__bd _403c8fc">工作年限</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access _403c8fc">{{selecYear}}</view>
+        </view>
+      </picker>
+    </view>
+    </view>
+  <view class="_403c8fc">
+  <button open-type="getUserInfo" class="_403c8fc">获取用户登陆信息</button>
+  </view>
+</view>

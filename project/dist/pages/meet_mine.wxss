@@ -1,0 +1,83 @@
+
+.meet-tutor._9fb875a{
+  display: flex;
+  flex-direction: column;
+  font-size: 30rpx;
+  width: 100%;
+}
+.meet-tutor .meet-items._9fb875a{
+  display: flex;
+  padding: 15rpx 0;
+  border-bottom: solid 15rpx #F1EFEF;
+}
+ .meet-items .meet-pic._9fb875a{
+   width: 20%;
+   padding: 5rpx 0;
+   display: flex;
+   align-items: center;
+ }
+.meet-items .meet-pic .user-pic._9fb875a{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%; 
+  margin: 0 auto;
+  display: block;
+}
+  .meet-items .meet-msg._9fb875a{
+   width: 80%;
+ }
+ .tit_user text._9fb875a{
+   margin: 0 15rpx;
+ }
+.tit_user .tit_name._9fb875a{
+ font-size: 35rpx;
+ }
+ .tit_user .tit_work._9fb875a{
+ color: #ccc;
+ }
+ .meet-msg .tit_num text._9fb875a{
+   padding: 10rpx 15rpx;
+   color: #ccc;
+ }
+ .meet-msg .tit_issue._9fb875a{
+   padding:  0 15rpx;
+ }
+ .meet-msg .tit_issue .skil._9fb875a{
+   padding: 6rpx 0;
+   font-size: 33rpx;
+   color: #000;
+   display: inline-block;
+ }
+  .meet-msg .tit_issue .yue._9fb875a{
+   padding: 6rpx 0;
+   font-size:26rpx;
+   color: #f00;
+   display: inline-block;
+ }
+ .tit_issue .yue .iconsmall._9fb875a{
+   display: inline-block;
+   width: 35rpx;
+   height: 35rpx;
+   background: #f00;
+   text-align: center;
+   line-height: 35rpx;
+   color: #fff;
+ }
+
+.foot._9fb875a{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 30rpx;
+
+ }
+ .foot button._9fb875a{
+   width: 100%;
+   border: none;
+   background: #c97a0e;
+   height: 100rpx;
+   color: #fff;
+   font-size: 35rpx;
+   line-height: 100rpx;
+ }

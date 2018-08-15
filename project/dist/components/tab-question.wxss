@@ -1,0 +1,38 @@
+
+.readyList._ee89e6a {
+  padding: 5rpx 0;
+}
+.readyList .ask-items._ee89e6a {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: solid 15rpx #eee;
+}
+.readyList .ask-items .ask text._ee89e6a{
+  padding: 0 15rpx;
+}
+.readyList .ask-items .ask .unread._ee89e6a{
+  width: 50rpx;
+  height: 35rpx;
+  text-align: center;
+  line-height: 35rpx;
+  background: #EA5D5D;
+  font-size: 24rpx;
+  border-radius: 3rpx;
+}
+.none._ee89e6a{
+  display: none;
+}
+.readyList .ask-items .ask .ask-tit._ee89e6a{
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.readyState._6ade5d5._ee89e6a{
+  padding: 6rpx 0;
+}
+.readyState text._6ade5d5._ee89e6a{
+  padding: 0 10rpx;
+}
+.readyState .price._6ade5d5._ee89e6a {
+  color: orange;
+}
+

@@ -1,0 +1,126 @@
+<template>
+ <view class="compile">
+    <view class="comp-item">
+      <block wx:for="{{result}}" wx:key="*this">
+        <navigator url="/pages/perhome?id={{editTmp[index][1]}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">{{editTmp[index][0]}}</view>
+          <view class="weui-cell__hd">
+              <image src="{{item.img}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">{{item}}</view>
+          </navigator>
+        </block>
+    <view class="list_item" >
+      <picker bindchange="bindPicker" value="{{ind}}" range="{{interest}}">
+        <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">兴趣领域</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">{{hobby}}</view>
+      </view>
+      </picker>
+    </view>
+    <view class="list_item" >
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">工作年限</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">{{selecYear}}</view>
+        </view>
+      </picker>
+    </view>
+    </view>
+  <view>
+  </view>
+</view>
+</view>
+
+</template>
+<script>
+import wepy from 'wepy'
+import {getUserInfo} from '../action/action'
+import {edit} from '../common/module'
+import {ota} from '../utils/ota'
+export default class Compile extends wepy.page {
+  config = {
+    navigationBarTitleText: '编辑资料'
+  }
+  onLoad() {
+    const json = getUserInfo(123456789)
+    this.result = json.data
+    console.log(this.result, this.editTmp)
+  }
+  data = {
+    editTmp: edit,
+    result: {},
+    img: '../images/pic.jpg',
+    array: ['1年', '2年', '3年', '4年', '5年', '6年', '7年', '8年', '9年', '10年以上'],
+    interest: ['前端JS', '前端VUE', '前端React', '前端Html', '前端css'],
+    index: 0,
+    ind: 0,
+    hobby: '前端JS',
+    selecYear: '1年',
+    list: [
+      {
+        text: '名字',
+        isHpic: false,
+        titbar: 'Johnny'
+      },
+      {
+        text: '头像',
+        titbar: '',
+        img: '../images/pic.jpg',
+        isHpic: true
+      },
+      {
+        text: '职位',
+        isHpic: false,
+        titbar: '阿里巴巴北京电商'
+      },
+      {
+        text: '位置',
+        isHpic: false,
+        titbar: '北京市、朝阳区'
+      }
+    ]
+  }
+  methods = {
+    bindPickerChange: function(e) {
+      this.index = e.detail.value
+      this.selecYear = this.array[this.index]
+    },
+    bindPicker: function(e) {
+      this.ind = e.detail.value
+      this.hobby = this.interest[this.ind]
+    },
+    bindDateChange: function(e) {
+      this.setData({
+        date: e.detail.value
+      })
+    },
+    bindTimeChange: function(e) {
+      this.setData({
+        time: e.detail.value
+      })
+    }
+  }
+}
+</script>
+<style>
+.compile{
+    width: 100%;
+    height: 100%;
+    background: #efefef;
+    font-size: 32rpx;
+}
+.comp-item{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-top:solid 25rpx #efefef;
+}
+
+.list_item{
+ border-top:solid 10rpx #eee;
+}
+.weui-cell__ft_in-access:nth-child(2){
+  margin-right:15rpx;
+}
+</style>

@@ -1,0 +1,49 @@
+<template>
+  <view class="page">
+    <nick-name wx:if="{{idNum===0}}"></nick-name>    
+    <up-photo wx:if="{{idNum===1}}"></up-photo>
+    <job-tit wx:if="{{idNum===2}}"></job-tit>
+    <local-add wx:if="{{idNum===3}}"></local-add>
+    <Mine-text wx:if="{{idNum===4}}"></Mine-text>
+
+</view>
+</template>
+<script>
+  import wepy from 'wepy'
+  import Upphot from '../components/up-photo'
+  import Nickname from '../components/nickname'
+  import Job from '../components/job'
+  import Local from '../components/location'
+  import Mine from '../components/mine'
+  export default class Index extends wepy.page {
+    components = {
+      'up-photo': Upphot,
+      'nick-name': Nickname,
+      'job-tit': Job,
+      'local-add': Local,
+      'Mine-text': Mine
+    }
+    data= {
+      files: '../images/pic.jpg',
+      idNum: 1
+    }
+    methods={}
+    onLoad(options) {
+      let id = Number(options.id)
+      this.idNum = id
+    }
+  }
+</script>
+<style>
+   .sketch{
+       border-bottom: solid 1rpx #ccc;
+    }
+    .sketch .direct{
+        height: 60rpx;
+        line-height:60rpx;
+        padding: 0 15rpx;
+    }
+    .sketch textarea{
+         text-indent: 15rpx;
+    }
+</style>

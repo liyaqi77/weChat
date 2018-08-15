@@ -1,0 +1,96 @@
+<template>
+     <view class="pro">
+        <view class="time-shift">
+        <block wx:for="{{list}}" wx:key="{{item}}">
+            <view class="act">
+            <text>{{item}}</text>
+            <text class="num">{{index+1}}</text>
+            </view>
+        </block>
+        </view>  
+        <view class="inp">
+          <block wx:for="{{active}}" wx:key="*this">
+            <view class="items-inp">
+                <text>{{item}}</text>
+                <input></input>
+            </view>
+          </block>
+        </view> 
+         <view class="foot">
+    <navigator url="/pages/offline_act"><button>提交审核</button></navigator>
+  </view> 
+     </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  props= {}
+  data={
+    list: ['发起活动', '平台审核', '通知粉丝', '付费报名', '见面'],
+    active: ['活动主题', '活动时间', '活动地点', '活动价格', '活动名额']
+  }
+}
+</script>
+<style scoped>
+.pro{
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    font-size: 30rpx;
+}
+.time-shift{
+    width: 100%;
+    padding: 20rpx 0;
+    background: #fff;
+    display:flex;
+    justify-content: center;
+}
+.act{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20rpx;
+    text-align: center;
+}
+.act .num{
+    width: 35rpx;
+    height: 35rpx;
+    background: #ccc;
+    text-align: center;
+    line-height: 35rpx;
+    border-radius: 50%;
+    color: #fff;
+    margin: 10rpx auto;
+}
+.inp{
+    width: 100%;
+    padding: 20rpx 0;
+    background: #fff;
+    font-size: 30rpx; 
+    border-top: solid 15rpx #eee;
+}
+.inp .items-inp{
+    width: 90%;
+    margin: 10rpx auto;
+}
+.inp .items-inp input{
+    border: solid 1px #ccc;
+    margin: 10rpx 0;
+}
+.foot{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 30rpx;
+
+ }
+ .foot button{
+   width: 100%;
+   border: none;
+   background: #c97a0e;
+   height: 100rpx;
+   color: #fff;
+   font-size: 35rpx;
+   line-height: 100rpx;
+ }
+</style>

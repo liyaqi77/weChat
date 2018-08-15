@@ -1,0 +1,125 @@
+<template>
+    <view class="capital">
+       <view class="earning">
+           <text class="balance">账户余额</text>
+           <text class="red">￥200</text>
+           <text class="white">提现</text>
+       </view>
+       <view class="tabClick">
+           <block  wx:for="{{content}}"  wx:key="{{item.id}}">
+       <text id="{{index}}" data-list="{{item.list}}" class="{{activeIndex==index?'active_items':''}}" bindtap="tabClick">{{item.tabs}}</text>
+    </block>
+       </view>
+       <tab-income :content.sync="init"></tab-income>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+import Tabincome from '../components/tab_income'
+export default class Index extends wepy.page {
+  components = {
+    'tab-income': Tabincome
+  }
+  props= {}
+  methods = {
+    tabClick(e) {
+      let current = e.currentTarget.id || 0
+      this.init = e.currentTarget.dataset.list
+      this.activeIndex = current
+    }
+  }
+  onLoad(options) {
+    this.init = this.content[this.activeIndex].list
+  }
+  data={
+    activeIndex: 0,
+    init: null,
+    content: [{
+      tabs: '收入明细',
+      list: [
+        {
+          id: '123450',
+          title: '付费回答-xxxx什么是相对地址...',
+          money: '10',
+          ask: '07-28'
+        },
+        {
+          id: '123451',
+          title: '付费回答-xxxx什么是相对地址...',
+          money: '10',
+          ask: '07-28'
+        }]
+    },
+    {
+      tabs: '提现记录',
+      list: [
+        {
+          id: '123450',
+          title: '付费回答-xxxx什么是相对地址...',
+          money: '10',
+          ask: '07-29'
+        },
+        {
+          id: '123451',
+          title: '付费回答-xxxx什么是相对地址...',
+          money: '10',
+          ask: '07-28'
+        },
+        {
+          id: '123452',
+          title: '付费回答-xxxx什么是相对地址...',
+          money: '10',
+          ask: '07-28'
+        },
+        {
+          id: '123453',
+          title: '付费回答-xxxx什么是相对地址...',
+          money: '10',
+          ask: '07-28'
+        }]
+    }]
+  }
+  config = {
+    navigationBarTitleText: '账户资金'
+  }
+}
+</script>
+<style>
+.earning{
+    width: 100%;
+    height: 300rpx;
+    background: #bbd3f8;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30rpx;
+}
+.earning .balance{
+    color: sienna
+}
+.earning .red{
+    color: #f00
+}
+.earning .white{
+    color: white;
+    border-radius:10rpx;
+    padding:2rpx 10rpx;
+    border:solid 1rpx #fff;
+}
+.tabClick {
+    height: 60rpx;
+    line-height: 60rpx;
+    background: #fff;
+    border-bottom: solid 15rpx #F1EFEF;
+    border-top: solid 15rpx #F1EFEF;
+}
+
+.tabClick text {
+    padding: 0 15rpx;
+    font-size: 30rpx;
+}
+.active_items{
+    color: #f00;
+}
+</style>

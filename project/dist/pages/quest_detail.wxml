@@ -1,0 +1,22 @@
+
+  <view class="detail_box _7989b7a">
+    <view class="content _7989b7a">
+      <view class="titdeta _7989b7a">{{id.question}}</view>
+      <view class="author _7989b7a">
+        <image class="image _7989b7a"/>
+        <text class="_7989b7a">{{id.avator}}</text>
+      </view>
+      <view class="articlecon _7989b7a">{{id.text}}</view>
+      </view>
+    <view class="foot _7989b7a">
+        <view class="left _7989b7a">
+            <text class="_7989b7a">对这个回答满意吗?</text>
+            <text class="_7989b7a">请匿名打分</text>
+        </view>
+        <view class="right _7989b7a">
+            <block  wx:for="{{list}}" wx:key="{{item}}" class="_7989b7a">
+                <view class="items {{activeIndex>=(index+1)?'activeIndex':''}} _7989b7a" bindtap="changelevel" data-id="{{index}}"/>
+            </block>
+        </view>
+    </view>
+  </view>

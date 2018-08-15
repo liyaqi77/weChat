@@ -1,0 +1,144 @@
+
+.student {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 24rpx;
+}
+
+.title-msg {
+    display: flex;
+    height: 150rpx;
+    border-bottom: solid 1px #ccc;
+}
+
+.msg {
+    width: 70%;
+    height: 100%;
+    padding: 0 20rpx;
+}
+
+.msg .Johnny {
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: solid 1px #ccc;
+    display: block;
+}
+
+.msg .Johnny text:nth-child(2) {
+    padding: 0 20px;
+    color: #3385FF
+}
+
+.msg .quantity {
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+}
+
+.msg .quantity .bean {
+    width: 25%;
+    height: 80%;
+    font-size: 30rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.msg .quantity .bean:nth-child(2) {
+    margin-left: 20rpx;
+}
+
+.msg .quantity .bean text:nth-child(2) {
+    font-size: 22rpx;
+    color: #ccc;
+    padding: 0 5rpx;
+}
+
+.img {
+    flex: 1;
+}
+
+.user-pic {
+    width: 150rpx;
+    height: 140rpx;
+    margin: 5rpx auto;
+    border-radius: 50%;
+    display: block;
+}
+
+.title-con {
+    width: 90%;
+    padding: 5rpx 0;
+    margin: 0 auto;
+}
+
+.title-con .icon {
+    display: flex;
+    align-items: center;
+    padding: 5rpx 0;
+    width: 100%;
+}
+
+.title-con .icon .iconfont {
+    width: 45rpx;
+    height: 55rpx;
+    text-align: center;
+    color: #bbb;
+}
+
+.title-con .icon text {
+    color: hsla(0, 1%, 33%, 0.92);
+    padding: 2rpx 15rpx;
+}
+
+.apply-for {
+    border-top: solid 15rpx #F1EFEF;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25rpx 0;
+    border-bottom: solid 15rpx #F1EFEF;
+}
+
+.apply-for text {
+    font-size: 26rpx;
+    text-indent: 20rpx;
+    color: #868080;
+}
+
+.apply-for button {
+    width: 160rpx;
+    height: 50rpx;
+    font-size: 22rpx;
+    line-height: 50rpx;
+    color: #fff;
+    background: #C1C10F
+}
+
+.issue {
+    width: 100%;
+    padding: 5rpx 0;
+}
+
+.issue .issue-item {
+    height: 70rpx;
+    line-height: 70rpx;
+    border-bottom: solid 1rpx #ccc;
+    display: flex;
+    justify-content: space-between;
+    font-size: 26rpx;
+    font-weight: 600;
+    color: #5E5C5C;
+    text-indent: 20rpx;
+}
+
+.issue .issue-item .red {
+    color: red;
+    font-size: 24rpx;
+}
+
+.issue .issue-item .iconfont {
+    padding-right: 20rpx;
+}

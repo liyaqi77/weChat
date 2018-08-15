@@ -1,0 +1,28 @@
+<template>
+   <view class="section">
+        <form bindsubmit="bindFormSubmit">
+            <textarea placeholder="自我介绍" name="textarea"/>
+            <button form-type="submit"> 提交 </button>
+        </form>
+   </view>
+
+</template>
+<script>
+import wepy from 'wepy'
+export default class Mine extends wepy.component {
+  props = {}
+  methods = {
+    bindFormSubmit: function(e) {
+      console.log(e.detail.value.textarea)
+    }
+  }
+}
+</script>
+<style>
+.section{
+    border-bottom: solid 1rpx #ccc;
+}
+.section textarea{
+    text-indent: 15rpx;
+}
+</style>

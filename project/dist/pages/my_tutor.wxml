@@ -1,0 +1,34 @@
+
+<view class="quiz _1c03450">
+   <view class="quiz-title _1c03450">
+     <block  wx:for="{{content}}" wx:key="{{item.id}}" class="_1c03450">
+       <text id="{{index}}" data-list="{{item.list}}" class="{{activeIndex==index?'active_items':''}} _1c03450" bindtap="tabClick">{{item.tabs}}</text>
+    </block>
+   </view>
+   
+<view class="meet-tutor _dcdde56 _1c03450">
+  <block  wx:for="{{$TabTutor$content}}" wx:key="{{item.id}}" class="_dcdde56">
+    <view class="meet-items _dcdde56" bindtap="$TabTutor$issueitems" data-id="{{item.id}}">
+    <view class="meet-pic _dcdde56"> 
+    <image class="user-pic _dcdde56" src="{{item.img}}"/>
+    </view>
+    <view class="meet-msg _dcdde56">
+      <view class="tit_user _dcdde56">
+        <text class="tit_name _dcdde56">{{item.title}}</text> 
+        <text class="tit_work _dcdde56">{{item.jobtitle}}</text>
+      </view>
+      <view class="tit_num _dcdde56">
+        <text class="_dcdde56">{{item.asknum}}回答</text>
+        <text class="_dcdde56">{{item.fans}}粉丝</text>
+        <text class="_dcdde56">{{item.meetnum}}相见</text>
+      </view>
+      <view class="tit_issue _dcdde56">
+        <text class="skil _dcdde56">{{item.question}}</text>
+        <text class="skil _dcdde56">{{item.addres}}:</text>
+        <text class="{{item.isRead?'yue':'none'}} _dcdde56"><text class="iconsmall _dcdde56">{{item.essence}}</text>{{item.dateadd}}</text>
+      </view>
+    </view>
+    </view>
+  </block>
+   </view>
+</view>

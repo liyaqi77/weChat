@@ -1,0 +1,67 @@
+
+.meet-tutor._dcdde56{
+  display: flex;
+  flex-direction: column;
+}
+.meet-tutor .meet-items._dcdde56{
+  display: flex;
+  padding: 15rpx 0;
+  border-bottom: solid 15rpx #F1EFEF;
+}
+ .meet-items .meet-pic._dcdde56{
+   width: 20%;
+   padding: 5rpx 0;
+   display: flex;
+   align-items: center;
+ }
+.meet-items .meet-pic .user-pic._dcdde56{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius:50%; 
+  margin: 0 auto;
+  display: block;
+}
+  .meet-items .meet-msg._dcdde56{
+   width: 80%;
+ }
+ .tit_user text._dcdde56{
+   margin: 0 15rpx;
+ }
+.tit_user .tit_name._dcdde56{
+ font-size: 35rpx;
+ }
+ .tit_user .tit_work._dcdde56{
+ color: #ccc;
+ }
+ .meet-msg .tit_num text._dcdde56{
+   padding: 15rpx 15rpx;
+   color: #ccc;
+ }
+ .meet-msg .tit_issue._dcdde56{
+   padding:  0 15rpx;
+ }
+ .meet-msg .tit_issue .skil._dcdde56{
+   padding: 6rpx 0;
+   font-size: 33rpx;
+   color: #000;
+   display: inline-block;
+ }
+  .meet-msg .tit_issue .yue._dcdde56{
+   padding: 6rpx 0;
+   font-size:26rpx;
+   color: #f00;
+   display: inline-block;
+ }
+ .tit_issue .yue .iconsmall._dcdde56{
+   display: inline-block;
+   width: 35rpx;
+   height: 35rpx;
+   background: #f00;
+   text-align: center;
+   line-height: 35rpx;
+   color: #fff;
+ }
+ .none._dcdde56{
+   display: none
+ }
+

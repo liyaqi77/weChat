@@ -1,0 +1,64 @@
+
+  <view class="page">
+    
+    <view class="nick _18d1f9b" wx:if="{{idNum===0}}">
+        <view class="_18d1f9b"><text class="_18d1f9b">昵称:</text></view>
+        <view class="_18d1f9b"><input class="_18d1f9b"/></view>
+        <view class="_18d1f9b"><button class="_18d1f9b">确定</button></view>
+    </view>    
+    
+   <view class="section" wx:if="{{idNum===1}}">
+   <view class="page">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{$upPhoto$files.length}}/20</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block  wx:for="{{$upPhoto$files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="$upPhoto$previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill"/>
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="$upPhoto$chooseImage"/>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+   </view>
+
+
+    
+    <view class="job _41d75d4" wx:if="{{idNum===2}}">
+        <view class="_41d75d4"><text class="_41d75d4">职位:</text></view>
+        <view class="_41d75d4"><input class="_41d75d4"/></view>
+        <view class="_41d75d4"><button class="_41d75d4">确定</button></view>
+    </view>
+    
+       <view class="location _189c93c" wx:if="{{idNum===3}}">
+        <view class="_189c93c"><text class="_189c93c">位置:</text></view>
+        <view class="_189c93c"><input class="_189c93c"/></view>
+        <view class="_189c93c"><button class="_189c93c">确定</button></view>
+    </view>
+    
+   <view class="section" wx:if="{{idNum===4}}">
+        <form bindsubmit="$MineText$bindFormSubmit">
+            <textarea placeholder="自我介绍" name="textarea"/>
+            <button form-type="submit"> 提交 </button>
+        </form>
+   </view>
+
+
+
+</view>

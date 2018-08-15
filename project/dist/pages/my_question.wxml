@@ -1,0 +1,24 @@
+
+<view class="quiz _59a18e8">
+   <view class="quiz-title _59a18e8">
+     <block  wx:for="{{content}}" wx:key="{{item.id}}" class="_59a18e8">
+       <text id="{{index}}" data-list="{{item.list}}" class="{{activeIndex==index?'active_items':''}} _59a18e8" bindtap="tabClick">{{item.tabs}}</text>
+    </block>
+   </view>
+   
+<view class="readyList _ee89e6a _59a18e8">
+  <block  wx:for="{{$TabQuestion$content}}" wx:key="{{item.id}}" class="_ee89e6a">
+    <view class="ask-items _ee89e6a" bindtap="$TabQuestion$issueitems" data-id="{{item.previ_text}}">
+    <view class="ask _ee89e6a"> 
+    <text class="{{item.isRead?'unread':'none'}} _ee89e6a">未读</text>
+    <text class="ask-tit _ee89e6a">{{item.title}}</text>
+    </view>
+    <view class="readyState _ee89e6a">
+    <text class="price _ee89e6a">${{item.money}}</text>
+    <text class="_ee89e6a">{{item.ask}}</text>
+    <text class="_ee89e6a">{{item.essence}}</text>
+    </view>
+    </view>
+  </block>
+   </view>
+</view>

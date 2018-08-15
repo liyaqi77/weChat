@@ -1,0 +1,7 @@
+
+.section{
+    border-bottom: solid 1rpx #ccc;
+}
+.section textarea{
+    text-indent: 15rpx;
+}

@@ -1,0 +1,107 @@
+<template>
+     <view class="search_index">
+         <view class="search_box">
+        <view class="search">
+            <view class="search-input">
+            <text class="iconfont">🔍</text>
+            <input type="text" placeholder="全球城市" bindinput="bindKeyInput"/>
+            <text class="delete">x</text>
+            </view>
+            <text class="cancel">取消</text>    
+        </view>
+        </view>
+        <view class="search_msg">
+            <block wx:for="{{searchMsg}}" wx:key="{{index}}">
+                <text class="search_item" bindtap="cityid" data-id="{{item.cname}}">{{item.cname}}</text>
+            </block>
+        </view>
+     </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  props= {}
+  data={
+    dataList: null,
+    searchMsg: []
+  }
+  components={}
+  methods={
+    bindKeyInput(e) {
+      let InputVal = e.detail.value
+      let list = []
+      let newlist = this.dataList.cities.filter((item) => {
+        if (item.cfrl === InputVal) {
+          return item
+        }
+      })
+      list = list.concat(newlist)
+      this.searchMsg = list
+      console.log(list)
+    },
+    cityid (e) {
+      let titname = e.currentTarget.dataset.id
+      wepy.navigateTo({
+        url: '/pages/index?titname=' + titname
+      })
+    }
+  }
+  onLoad() {
+    console.log(111)
+    this.dataList = JSON.parse(wepy.getStorageSync('data'))
+  }
+  events={}
+  watch={}
+}
+</script>
+<style>
+.search_box{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.search_box .search{
+    width: 100%;
+    height: 90rpx;
+    background: #c6dbff;
+    display: flex;
+    align-items: center;
+}
+.search .search-input{
+    width: 80%;
+    background: #fff;
+    margin: 15rpx auto;
+    border-radius: 120rpx;
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+}
+.search .search-input .delete{
+    padding-right:15rpx; 
+    color: #ccc;
+ }
+.search .cancel{
+    font-size: 32rpx;
+    color: #4289ff;
+    padding-right:15rpx; 
+}
+.search .search-input text{
+  padding-left: 25rpx;
+}
+ .search .search-input input{
+    width:95%;
+    text-indent: 10rpx;
+}
+.search_msg{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.search_msg .search_item{
+    width: 30%;
+    padding: 10rpx 0;
+    border: solid 1rpx #ccc;
+    text-align: center;
+    margin: 10rpx;
+}
+</style>

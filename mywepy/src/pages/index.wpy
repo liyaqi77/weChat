@@ -1,0 +1,228 @@
+<template>
+  <view class="student">
+    <view class='title-msg'>
+        <view class='msg'>
+            <view class='Johnny'><text>{{user.username}}</text> <text bindtap="editClick">编辑</text> </view>
+            <view class='quantity'>
+                <view class='bean'>
+                    <text>{{user.bean}}</text>
+                    <text>粉丝</text>
+                </view>
+                <view class='bean'>
+                    <text>{{user.attention}}</text>
+                    <text>关注</text>
+                </view>
+            </view>
+        </view>
+        <view class='img'>
+            <image class='user-pic' src="{{user.image}}"></image>
+        </view>
+    </view>
+    <view class='title-con'>
+        <view class='icon'>
+            <icon class='iconfont icon-msnui-pos'></icon>
+            <text>{{user.loactionOne}}</text>
+        </view>
+        <view class='icon'>
+            <icon class='iconfont icon-baozhuanhuan'></icon>
+            <text>{{user.loactionTwo}}</text>
+        </view>
+        <view class='icon'>
+            <icon class='iconfont icon-hezi101'></icon>
+            <text>{{user.loactionThree}}</text>
+        </view>
+    </view>
+    <view class='apply-for'>
+        <text>申请为导师，帮助更多人成长</text>
+        <button bindtap="applyfor('申请成为导师')">立即申请</button>
+    </view>
+    <view class="issue">
+    <view class='issue-item'  bindtap="jump('my_question')">
+      <text>我的提问 <text class="red">2个新回答</text></text>
+    <icon class='iconfont icon-jiantou'></icon>
+    </view>
+     <view class='issue-item'  bindtap="jump('my_tutor')">
+      <text>我的导师 <text class="red">2个可见</text></text>
+    <icon class='iconfont icon-jiantou'></icon>
+    </view>
+     <view class='issue-item'  bindtap="jump('my_collect')">
+      <text>我的收藏 <text class="red"></text></text>
+    <icon class='iconfont icon-jiantou'></icon>
+    </view>
+     <view class='issue-item'  bindtap="jump('my_action')">
+      <text>我的动态 <text class="red"></text></text>
+    <icon class='iconfont icon-jiantou'></icon>
+    </view>
+    </view>
+</view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {}
+  data = {
+    user: {
+      username: 'Johnny',
+      bean: 100,
+      attention: 100,
+      image: '../images/pic.jpg',
+      loactionOne: '北京市、朝阳区、望京',
+      loactionTwo: '阿里巴巴北京电商事业部、前端负责人',
+      loactionThree: '精通多套前端框架、熟悉后端技术、从业经验14年、参与过多个大型互联网项目'
+
+    }}
+  methods = {
+    jump: function(path) {
+      wepy.navigateTo({
+        url: `${path}?title=` + path
+      })
+    },
+    applyfor: function(path) {
+      wepy.navigateTo({
+        url: `/pages/apply?path=` + path
+      })
+    },
+    editClick: function() {
+      wepy.navigateTo({
+        url: '/pages/compile'
+      })
+    }
+  }
+}
+</script>
+
+<style scoped>
+
+.student {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 30rpx;
+}
+
+.title-msg {
+    display: flex;
+    height: 150rpx;
+    border-bottom: solid 1px #ccc;
+}
+
+.msg {
+    width: 70%;
+    height: 100%;
+    padding: 0 20rpx;
+}
+
+.msg .Johnny {
+    width: 100%;
+    height: 60rpx;
+    line-height: 60rpx;
+    border-bottom: solid 1px #ccc;
+    display: block;
+}
+.msg .Johnny text:nth-child(2) {
+    padding: 0 20px;
+    color: #3385FF
+}
+.msg .quantity {
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+}
+.msg .quantity .bean {
+    width: 25%;
+    height: 80%;
+    font-size: 30rpx;
+    display: flex;
+    flex-direction: column;
+}
+.msg .quantity .bean:nth-child(2) {
+    margin-left: 20rpx;
+}
+.msg .quantity .bean text:nth-child(2) {
+    font-size: 22rpx;
+    color: #ccc;
+    padding: 0 5rpx;
+}
+.img {
+    flex: 1;
+}
+.user-pic {
+    width: 130rpx;
+    height: 130rpx;
+    margin: 5rpx auto;
+    border-radius: 50%;
+    display: block;
+}
+.title-con {
+    width: 90%;
+    padding: 5rpx 0;
+    margin: 0 auto;
+}
+.title-con .icon {
+    display: flex;
+    align-items: center;
+    padding: 18rpx 0;
+    width: 100%;
+}
+.title-con .icon .iconfont {
+    width: 45rpx;
+    height: 55rpx;
+    text-align: center;
+    margin-top: -22rpx;
+    display: block;
+    color: #bbb;
+}
+.title-con .icon text {
+    color: hsla(0, 1%, 33%, 0.92);
+    padding: 0 15rpx;
+}
+.apply-for {
+    border-top: solid 15rpx #F1EFEF;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25rpx 0;
+    border-bottom: solid 15rpx #F1EFEF;
+}
+.apply-for text {
+    font-size: 26rpx;
+    text-indent: 20rpx;
+    color: #868080;
+}
+
+.apply-for button {
+    width: 160rpx;
+    height: 50rpx;
+    font-size: 22rpx;
+    line-height: 50rpx;
+    color: #fff;
+    background: #C1C10F
+}
+
+.issue {
+    width: 100%;
+    padding: 5rpx 0;
+}
+.issue .issue-item {
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: solid 1rpx #ccc;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #5E5C5C;
+    text-indent: 20rpx;
+}
+
+.issue .issue-item .red {
+    color: red;
+    font-size: 26rpx;
+}
+
+.issue .issue-item .iconfont {
+    padding-right: 20rpx;
+     font-size: 24rpx;
+}
+</style>

@@ -1,0 +1,38 @@
+<template>
+    <view class="nick">
+    <view class="account">
+     <block wx:for="{{content}}" wx:key="{{item}}">
+         <view class="ask-items">
+             <text class="red">{{item.money}}</text>
+             <text>{{item.title}}</text>
+             <text>{{item.ask}}</text>
+            </view>
+     </block>
+    </view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Tabincom extends wepy.component {
+  props = {
+    content: Array
+  }
+  methods = {}
+}
+</script>
+<style scoped>
+.account{
+  padding: 5rpx 0;
+  font-size: 32rpx;
+}
+.account .ask-items {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: solid 2px #eee;
+  display: flex;
+  justify-content: space-around
+}
+.red{
+    color: #f00;
+}
+</style>

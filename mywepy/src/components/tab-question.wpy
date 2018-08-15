@@ -1,0 +1,72 @@
+<template>
+<view class='readyList'>
+  <block wx:for="{{content}}" wx:key="{{item.id}}">
+    <view class='ask-items' bindtap="issueitems" data-id="{{item.id}}">
+    <view class='ask'> 
+    <text class="{{item.isRead?'unread':'none'}}">未读</text>
+    <text class='ask-tit'>{{item.title}}</text>
+    </view>
+    <view class='readyState'>
+    <text class="price">${{item.money}}</text>
+    <text>{{item.ask}}</text>
+    <text>{{item.essence}}</text>
+    </view>
+    </view>
+  </block>
+   </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class TabQuestion extends wepy.component {
+  props = {
+    content: Array
+  }
+  methods = {
+    issueitems: function (e) {
+      let id = e.currentTarget.dataset.id
+      wepy.navigateTo({
+        url: `quest_detail?id=` + id
+      })
+    }
+  }
+}
+</script>
+<style scoped>
+.readyList {
+  padding: 5rpx 0;
+}
+
+.readyList .ask-items {
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: solid 15rpx #eee;
+}
+.readyList .ask-items .ask text{
+  padding: 0 15rpx;
+}
+.readyList .ask-items .ask .unread{
+  width: 50rpx;
+  height: 35rpx;
+  text-align: center;
+  line-height: 35rpx;
+  background: #EA5D5D;
+  font-size: 24rpx;
+  border-radius: 3rpx;
+}
+.none{
+  display: none;
+}
+.readyList .ask-items .ask .ask-tit{
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.readyState{
+  padding: 6rpx 0;
+}
+.readyState text{
+  padding: 0 10rpx;
+}
+.readyState .price {
+  color: orange;
+}
+</style>

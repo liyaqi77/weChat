@@ -1,0 +1,163 @@
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+import { setStore } from 'wepy-redux'
+import configStore from './store'
+
+const store = configStore()
+setStore(store)
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/compile',
+      'pages/index',
+      'pages/my_tutor',
+      'pages/tutor',
+      'pages/my',
+      'pages/quiz',
+      'pages/my_question',
+      'pages/quest_detail',
+      'pages/apply',
+      'pages/perhome'
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#3385FF',
+      navigationBarTitleText: '惠答',
+      navigationBarTextStyle: '#fff'
+    },
+    tabBar: {
+      color: '#000',
+      selectedColor: '#1296db',
+      list: [
+        {
+          pagePath: 'pages/index',
+          iconPath: 'images/attention.png',
+          selectedIconPath: 'images/attention1.png',
+          text: '动态'
+        },
+        {
+          pagePath: 'pages/tutor',
+          iconPath: 'images/tutor.png',
+          selectedIconPath: 'images/tutor1.png',
+          text: '导师'
+        },
+        {
+          pagePath: 'pages/my',
+          iconPath: 'images/my.png',
+          selectedIconPath: 'images/my1.png',
+          text: '我的'
+        }
+      ]
+    }
+  }
+  globalData = {
+    userInfo: null
+  }
+
+  constructor () {
+    super()
+    this.use('requestfix')
+  }
+
+  onLaunch() {
+    this.testAsync()
+  }
+
+  sleep (s) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promise resolved')
+      }, s * 1000)
+    })
+  }
+
+  async testAsync () {
+    const data = await this.sleep(3)
+    console.log(data)
+  }
+
+  getUserInfo(cb) {
+    const that = this
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo
+    }
+    wepy.getUserInfo({
+      success (res) {
+        that.globalData.userInfo = res.userInfo
+        cb && cb(res.userInfo)
+      }
+    })
+  }
+}
+</script>
+<style >
+@import './style/weui.wxss';
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+page{
+  width: 100%;
+  height: 100%;
+}
+/**app.wxss**/
+@font-face {
+    font-family: "iconfont";
+    src: url('iconfont.eot?t=1533122789265');
+    /* IE9*/
+    src: url('iconfont.eot?t=1533122789265#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'), url('iconfont.ttf?t=1533122789265') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('iconfont.svg?t=1533122789265#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-msnui-pos:before {
+    content: "\e630";
+}
+
+.icon-baozhuanhuan:before {
+    content: "\e66f";
+}
+
+.icon-hezi101:before {
+    content: "\e690";
+}
+
+.icon-jiantou:before {
+    content: "\e65e";
+}
+
+.icon-dongtai:before {
+    content: "\e629";
+}
+
+.icon-wode:before {
+    content: "\e605";
+}
+
+.icon-daoshi:before {
+    content: "\e607";
+}
+.icon-xingxu:before { 
+  content: "\e62f"; 
+}
+.icon-xing-copy:before {
+   content: "\e76b"; 
+}
+
+</style>

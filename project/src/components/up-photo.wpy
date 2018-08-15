@@ -1,0 +1,81 @@
+<template>
+   <view class="section">
+   <view class="page">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">图片上传</view>
+                            <view class="weui-uploader__info">{{files.length}}/20</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+   </view>
+
+</template>
+<script>
+import wepy from 'wepy'
+export default class Upphoto extends wepy.component {
+  props = {}
+  data = {
+    files: [],
+    val: ''
+  }
+  methods = {
+    chooseImage: function (e) {
+      var that = this
+      wx.chooseImage({
+        sizeType: ['original'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function (res) {
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+          that.files = that.data.files.concat(res.tempFilePaths)
+          that.$apply()
+          wx.uploadFile({
+            url: 'http://127.0.0.1:8080/api/upload',
+            filePath: res.tempFilePaths[0],
+            name: 'uploadimg',
+            success:function(res){
+              console.log(JSON.parse(res.data))
+              that.val = JSON.parse(res.data).path
+              that.$apply()
+            }
+          })
+        }
+      })
+    },
+    previewImage: function(e) {
+      wepy.previewImage({
+        current: e.currentTarget.id, // 当前显示图片的http链接
+        urls: this.data.files // 需要预览的图片http链接列表
+      })
+    }
+  }
+}
+</script>
+<style>
+.section{
+    border-bottom: solid 1rpx #ccc;
+}
+.section textarea{
+    text-indent: 15rpx;
+}
+</style>

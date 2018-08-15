@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+<view><text>请输入用户名:</text><input type='text' placeholder='username'bindinput='user'></input> </view>
+<view><text>请输入密码:</text><input type='text' placeholder='password'  bindinput='pwd'></input></view>
+<view class="section">
+  <movable-area style="height: 500rpx; width: 500rpx;" scale-area class="parent">
+  <image src='../../images/2.jpg' class='imgbig'></image>
+    <movable-view style="height: 50rpx; width: 50rpx;" class='box' direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="2">
+     <image class='smallbig' src='../../images/21.jpg'></image>
+    </movable-view>
+  </movable-area>
+</view>
+</view>

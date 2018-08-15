@@ -1,0 +1,5 @@
+
+     <view class="content">
+     <!-- <view bindtap="onMusictap">{{!play?'播放':'暂停'}}</view> -->
+
+     </view>
