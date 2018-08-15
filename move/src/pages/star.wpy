@@ -1,0 +1,19 @@
+<template>
+  <view class="star">
+    <moveItems/>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import moveItems from '../components/move_items'
+export default class Index extends wepy.page {
+  components = {
+    'moveItems': moveItems
+  }
+  async onLoad() {
+  }
+}
+</script>
+<style scoped>
+
+</style>

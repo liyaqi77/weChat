@@ -1,13 +1,13 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 var edit = exports.edit = {
-    username: ['名字', 0],
-    imageUrl: ['头像', 1],
-    job: ['职位', 2],
-    location: ['位置', 3],
-    mine: ['自我介绍', 4]
+  name: ['名字', 0],
+  avatar: ['头像', 1],
+  title: ['职位', 2],
+  location: ['位置', 3],
+  summary: ['自我介绍', 4]
 };
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZHVsZS5qcyJdLCJuYW1lcyI6WyJlZGl0IiwidXNlcm5hbWUiLCJpbWFnZVVybCIsImpvYiIsImxvY2F0aW9uIiwibWluZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFBTyxJQUFNQSxzQkFBTztBQUNoQkMsY0FBVSxDQUFDLElBQUQsRUFBTyxDQUFQLENBRE07QUFFaEJDLGNBQVUsQ0FBQyxJQUFELEVBQU8sQ0FBUCxDQUZNO0FBR2hCQyxTQUFLLENBQUMsSUFBRCxFQUFPLENBQVAsQ0FIVztBQUloQkMsY0FBVSxDQUFDLElBQUQsRUFBTyxDQUFQLENBSk07QUFLaEJDLFVBQU0sQ0FBQyxNQUFELEVBQVMsQ0FBVDtBQUxVLENBQWIiLCJmaWxlIjoibW9kdWxlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IGVkaXQgPSB7XHJcbiAgICB1c2VybmFtZTogWyflkI3lrZcnLCAwXSxcclxuICAgIGltYWdlVXJsOiBbJ+WktOWDjycsIDFdLFxyXG4gICAgam9iOiBbJ+iBjOS9jScsIDJdLFxyXG4gICAgbG9jYXRpb246IFsn5L2N572uJywgM10sXHJcbiAgICBtaW5lOiBbJ+iHquaIkeS7i+e7jScsIDRdXHJcbn0iXX0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZHVsZS5qcyJdLCJuYW1lcyI6WyJlZGl0IiwibmFtZSIsImF2YXRhciIsInRpdGxlIiwibG9jYXRpb24iLCJzdW1tYXJ5Il0sIm1hcHBpbmdzIjoiOzs7OztBQUFPLElBQU1BLHNCQUFPO0FBQ2xCQyxRQUFNLENBQUMsSUFBRCxFQUFPLENBQVAsQ0FEWTtBQUVsQkMsVUFBUSxDQUFDLElBQUQsRUFBTyxDQUFQLENBRlU7QUFHbEJDLFNBQU8sQ0FBQyxJQUFELEVBQU8sQ0FBUCxDQUhXO0FBSWxCQyxZQUFVLENBQUMsSUFBRCxFQUFPLENBQVAsQ0FKUTtBQUtsQkMsV0FBUyxDQUFDLE1BQUQsRUFBUyxDQUFUO0FBTFMsQ0FBYiIsImZpbGUiOiJtb2R1bGUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgZWRpdCA9IHtcclxuICBuYW1lOiBbJ+WQjeWtlycsIDBdLFxyXG4gIGF2YXRhcjogWyflpLTlg48nLCAxXSxcclxuICB0aXRsZTogWyfogYzkvY0nLCAyXSxcclxuICBsb2NhdGlvbjogWyfkvY3nva4nLCAzXSxcclxuICBzdW1tYXJ5OiBbJ+iHquaIkeS7i+e7jScsIDRdXHJcbn1cclxuIl19

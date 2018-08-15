@@ -6,3 +6,9 @@ export const deleteObjKeys = (obj = {}, target) => {
   })
   return obj
 }
+export const toArray = len => {
+  return Array.from({length: len}, (val, ind) => {
+    console.log(ind)
+    return `${ind + 1}年`
+  })
+}

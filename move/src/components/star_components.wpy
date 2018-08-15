@@ -1,0 +1,47 @@
+<template>
+ <view class="startsCntainer">
+      <view class="starts">
+       <text class="iconfont icon-xing star"></text>
+       <text class="iconfont icon-xing star"></text>
+       <text class="iconfont icon-xing star"></text>
+       <text class="iconfont icon-xing star"></text>
+       <text class="iconfont icon-xing star"></text>  
+      </view> 
+       <text class="star-score">8.7</text>
+   </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.component {
+  props= {}
+  data={}
+}
+</script>
+<style scoped>
+.startsCntainer{
+    display: flex;
+    flex-direction: row;
+}
+.starts{
+    display: flex;
+    flex-direction: row;
+    height: 38rpx;
+    margin-right: 24rpx;
+    margin-top: 6rpx;
+}
+.starts text{
+    padding-left: 3rpx;
+    font-size: 30rpx;
+    color: #ccc
+}
+.star-score{
+    color: #1f3463;
+    font-size: 28rpx;
+}
+.starts{
+    display: flex;
+    flex-direction:row;
+    height: 17rpx;
+    margin-right: 24rpx;
+}
+</style>

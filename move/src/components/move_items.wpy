@@ -1,0 +1,58 @@
+<template>
+  <view class="move-list-container">
+    <view class="inner-container">
+      <view class="move-head">
+          <text clas="slogan">正在热映</text>
+          <view class="more">
+              <text class="more-text">更多</text>
+              <text class="iconfont icon-jiantouyou more-img"></text>
+          </view>
+      </view>
+    </view>
+      <view clas="moview-container aaa">
+        <moveComponents/>
+        <moveComponents/>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import moveComponents from '../components/move_components'
+export default class Index extends wepy.component {
+  components = {
+    'moveComponents': moveComponents
+  }
+  async onLoad() {
+  }
+}
+</script>
+<style scoped>
+.move-list-container{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.move-head{
+    display: flex;
+    padding: 10rpx 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.slogan{
+    font-size: 25rpx;
+}
+.more-text{
+    vertical-align: middle;
+    margin-right: 10rpx;
+    color: #1f4ba5;
+}
+.more-img{
+    font-size: 25rpx;
+    color: #1f4ba5;
+    vertical-align: middle;
+}
+.moview-container{
+    display: flex;
+    justify-content: space-between;
+}
+</style>

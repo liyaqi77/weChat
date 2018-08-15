@@ -1,7 +1,9 @@
-import wepy from 'wepy'
+// import wepy from 'wepy'
+import { API_HOST } from '../common/config'
+import { get } from '../utils/httpClient'
+function api(url) {
+  return API_HOST + url
+}
 export const getUserInfo = (uid) => {
-  return wepy.request({
-    url: 'http://localhost:8080/api/getUserInfo',
-    method: 'GET'
-  }).then(res => res.data)
+  return get(api('/api/user/info'), 'json')
 }

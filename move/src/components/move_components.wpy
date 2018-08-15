@@ -1,0 +1,34 @@
+<template>
+<view class="move-container">
+    <image class="move-img" src="../asstes/images/you.png"></image>
+    <text class="move-title">你的名字</text>
+    <star-com></star-com>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import starComponents from './star_components'
+export default class Index extends wepy.component {
+  props= {}
+  data={}
+  components = {
+    'star-com': starComponents
+  }
+}
+</script>
+<style scoped>
+.move-container{
+  display: flex;
+  flex-direction: column;
+}
+.move-img{
+    width:200rpx;
+    height:270rpx;
+    border-bottom: 20rpx;
+}
+.move-title{
+  padding: 16rpx;
+  font-size: 28rpx;
+}
+
+</style>

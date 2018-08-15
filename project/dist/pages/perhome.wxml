@@ -36,6 +36,7 @@
         </view>
     </view>
 </view>
+<button bindtap="$upPhoto$savePic">保存头像</button>
    </view>
 
 

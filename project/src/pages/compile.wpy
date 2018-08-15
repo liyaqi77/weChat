@@ -7,7 +7,7 @@
           <view class="weui-cell__hd">
               <image src="{{item.img}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
           </view>
-          <image class="weui-cell__ft weui-cell__ft_in-access img" wx:if="{{index==='imageUrl'}}" src="{{item}}"></image>
+          <image class="weui-cell__ft weui-cell__ft_in-access img" wx:if="{{index==='avatar'}}" src="{{item}}"></image>
           <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>{{item}}</view>
         </navigator>
         </block>
@@ -39,7 +39,7 @@ import wepy from 'wepy'
 import {getUserInfo} from '../action/action'
 import {edit} from '../common/module'
 import baseMixin from '../mixins/base'
-import {deleteObjKeys} from '../utils/ota'
+import {deleteObjKeys, toArray} from '../utils/ota'
 export default class Compile extends wepy.page {
   config = {
     navigationBarTitleText: '编辑资料'
@@ -51,10 +51,11 @@ export default class Compile extends wepy.page {
       const user = await this.getUserInfo() // 请求微信获取的跟人信息
       json.img = user.userInfo.avatarUrl
     }
-    this.array = json.array
-    this.interest = json.interest
+    this.array = toArray(10)
+    this.hobby = Object.values(json.tags)
+    this.interest.push(this.hobby)
+    this.selecYear =json.seniority + '年'
     this.editresult = deleteObjKeys(json, edit)
-    this.pic = option.pic
     this.$apply()
   }
   data = {
@@ -62,10 +63,9 @@ export default class Compile extends wepy.page {
     editresult: {},
     wxUserInfo: null,
     user: '',
-    img: '../images/pic.jpg',
     pic: '',
     array: [],
-    interest: [],
+    interest: ['前端js', 'vue', 'react', 'jquery'],
     index: 0,
     ind: 0,
     hobby: '前端JS',

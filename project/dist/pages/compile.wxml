@@ -7,7 +7,7 @@
           <view class="weui-cell__hd _403c8fc">
               <image src="{{item.img}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;" class="_403c8fc"/>
           </view>
-          <image class="weui-cell__ft weui-cell__ft_in-access img _403c8fc" wx:if="{{index==='imageUrl'}}" src="{{item}}"/>
+          <image class="weui-cell__ft weui-cell__ft_in-access img _403c8fc" wx:if="{{index==='avatar'}}" src="{{item}}"/>
           <view class="weui-cell__ft weui-cell__ft_in-access _403c8fc" wx:else>{{item}}</view>
         </navigator>
         </block>

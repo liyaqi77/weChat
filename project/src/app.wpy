@@ -7,7 +7,7 @@ export default class extends wepy.app {
   config = {
     // 页面列表
     pages: [
-      'pages/tutor',
+      'pages/compile',
       'pages/offline_act',
       'pages/index',
       'pages/my_tutor',
@@ -15,7 +15,7 @@ export default class extends wepy.app {
       'pages/quest_detail',
       'pages/apply',
       'pages/perhome',
-      'pages/compile',
+      'pages/tutor',
       'pages/mine',
       'pages/meet_mine',
       'pages/income'

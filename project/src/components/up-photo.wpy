@@ -28,6 +28,7 @@
         </view>
     </view>
 </view>
+<button bindtap="savePic">保存头像</button>
    </view>
 
 </template>
@@ -53,7 +54,7 @@ export default class Upphoto extends wepy.component {
             url: 'http://127.0.0.1:8080/api/upload',
             filePath: res.tempFilePaths[0],
             name: 'uploadimg',
-            success:function(res){
+            success: function(res) {
               console.log(JSON.parse(res.data))
               that.val = JSON.parse(res.data).path
               that.$apply()
@@ -66,6 +67,24 @@ export default class Upphoto extends wepy.component {
       wepy.previewImage({
         current: e.currentTarget.id, // 当前显示图片的http链接
         urls: this.data.files // 需要预览的图片http链接列表
+      })
+    },
+    savePic: function(e) {
+      let that = this
+      wepy.showModal({
+        title: '提示',
+        content: '返回编辑页',
+        success: function(res) {
+          console.log(123)
+          if (res.confirm) {
+            console.log('确定')
+            wepy.navigateTo({
+              url: '/pages/compile'
+            })
+          } else if (res.cancel) {
+            console.log('取消')
+          }
+        }
       })
     }
   }

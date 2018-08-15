@@ -1,14 +1,3 @@
-<style lang="less">
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-</style>
-
 <script>
 import wepy from 'wepy'
 import 'wepy-async-function'
@@ -22,42 +11,23 @@ setStore(store)
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/star',
       'pages/index'
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: '电影',
       navigationBarTextStyle: 'black'
     }
   }
-
   globalData = {
     userInfo: null
   }
-
   constructor () {
     super()
     this.use('requestfix')
   }
-
-  onLaunch() {
-    this.testAsync()
-  }
-
-  sleep (s) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve('promise resolved')
-      }, s * 1000)
-    })
-  }
-
-  async testAsync () {
-    const data = await this.sleep(3)
-    console.log(data)
-  }
-
   getUserInfo(cb) {
     const that = this
     if (this.globalData.userInfo) {
@@ -72,3 +42,47 @@ export default class extends wepy.app {
   }
 }
 </script>
+<style>
+.container {
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1534313511381'); /* IE9*/
+  src: url('iconfont.eot?t=1534313511381#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+  url('iconfont.ttf?t=1534313511381') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1534313511381#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouye:before { content: "\e622"; }
+
+.icon-fangdajing:before { content: "\e617"; }
+
+.icon-iconfuzhi:before { content: "\e601"; }
+
+.icon-wode:before { content: "\e62b"; }
+
+.icon-xingxi:before { content: "\e789"; }
+
+.icon-shouye1:before { content: "\e663"; }
+
+.icon-huodong:before { content: "\e657"; }
+
+.icon-xingbiao:before { content: "\e612"; }
+
+.icon-jiantouyou:before { content: "\e62d"; }
+
+.icon-xing:before { content: "\e69e"; }
+
+.icon-huodong-copy:before { content: "\e78a"; }
+</style>
