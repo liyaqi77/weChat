@@ -13,7 +13,15 @@ export default class BaseMixin extends wepy.mixin {
       console.log('mixin method tap')
     }
   }
+  async setUserId() {
+    wepy.setStorageSync('uid', 92)
+    return 92
+  }
   async getUserInfo() {
+    const user = await wepy.getUserInfo()
+    return user
+  }
+  async getwxUserInfo() {
     const user = await wepy.getUserInfo()
     return user
   }

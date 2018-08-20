@@ -46,21 +46,26 @@ export default class Compile extends wepy.page {
   }
   mixins =[baseMixin]
   async onLoad(option) {
-    const json = await getUserInfo(123456789) // 请求接口获取的个人信息
-    if (json.img === '') {
+    await this.setUserId()
+    const uid = wepy.getStorageSync('uid')
+    const json = await getUserInfo(uid) // 请求接口获取的个人信息
+    if (json.avatar === '') {
       const user = await this.getUserInfo() // 请求微信获取的跟人信息
-      json.img = user.userInfo.avatarUrl
+      json.avatar = user.userInfo.avatarUrl
     }
     this.array = toArray(10)
-    this.hobby = Object.values(json.tags)
-    this.interest.push(this.hobby)
-    this.selecYear =json.seniority + '年'
+    this.tags = [
+      '前端开发',
+      '后端开发'
+    ]
     this.editresult = deleteObjKeys(json, edit)
+    // this.hobby = Object.values(json.tags)
+    // this.interest.push(this.hobby)
     this.$apply()
   }
   data = {
     editTmp: edit,
-    editresult: {},
+    editresult: [],
     wxUserInfo: null,
     user: '',
     pic: '',
@@ -70,6 +75,7 @@ export default class Compile extends wepy.page {
     ind: 0,
     hobby: '前端JS',
     selecYear: '1年',
+    tags: '',
     list: [
       {
         text: '名字',

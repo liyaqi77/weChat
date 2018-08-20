@@ -1,0 +1,1 @@
+.list{width:630rpx}.list .li{float:left;background:#f09;width:150rpx;height:150rpx;text-align:center;line-height:150rpx;color:#fff;font-size:32rpx;margin:5rpx;transition:.5s}.list .li.active{background:#53d4fe}.btn{cursor:pointer}

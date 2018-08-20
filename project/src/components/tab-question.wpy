@@ -24,7 +24,7 @@ export default class TabQuestion extends wepy.component {
   methods = {
     issueitems: function (e) {
       let path = e.currentTarget.dataset.id
-      let id = JSON.stringfiy(path)
+      let id = JSON.stringify(path)
       wepy.navigateTo({
         url: `quest_detail?id=` + id
       })

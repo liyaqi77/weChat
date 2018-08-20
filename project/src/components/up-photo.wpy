@@ -34,11 +34,17 @@
 </template>
 <script>
 import wepy from 'wepy'
+import {getStorageSync} from '../utils/utils'
+import {getUserInfo} from '../action/action'
 export default class Upphoto extends wepy.component {
   props = {}
   data = {
     files: [],
     val: ''
+  }
+  async onLoad(options) {
+    const uid = getStorageSync('uid')
+    const json = await getUserInfo(uid)
   }
   methods = {
     chooseImage: function (e) {
@@ -70,7 +76,6 @@ export default class Upphoto extends wepy.component {
       })
     },
     savePic: function(e) {
-      let that = this
       wepy.showModal({
         title: '提示',
         content: '返回编辑页',

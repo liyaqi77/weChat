@@ -27,8 +27,7 @@ export default class Index extends wepy.component {
     border-bottom: 20rpx;
 }
 .move-title{
-  padding: 16rpx;
-  font-size: 28rpx;
+  padding: 5rpx 5rpx;
+  font-size: 25rpx;
 }
-
 </style>

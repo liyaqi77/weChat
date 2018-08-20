@@ -26,12 +26,12 @@ export default class Index extends wepy.component {
     display: flex;
     flex-direction: row;
     height: 38rpx;
-    margin-right: 24rpx;
+    margin-right: 20rpx;
     margin-top: 6rpx;
 }
 .starts text{
     padding-left: 3rpx;
-    font-size: 30rpx;
+    font-size: 28rpx;
     color: #ccc
 }
 .star-score{

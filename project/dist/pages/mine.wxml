@@ -1,2 +1,6 @@
 
-     <view>mine</view>
+     <view class="list">
+       <block  wx:for="{{arr}}" wx:key="{{item}}">
+         <view class="li {{index===n?'active':null}}" bindtap="{{index===4?'btn':null}}">{{item}}</view>
+       </block>
+     </view>

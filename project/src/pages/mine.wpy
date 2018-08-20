@@ -1,13 +1,46 @@
 <template>
-     <view>mine</view>
+     <view class="list">
+       <block wx:for="{{arr}}" wx:key="{{item}}">
+         <view class="li {{index===n?'active':null}}" bindtap="{{index===4?'btn':null}}">{{item}}</view>
+       </block>
+     </view>
 </template>
 <script>
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   props= {}
-  data={}
-  components={}
-  events={}
-  watch={}
+  data={
+    arr: ['手机', '平板', '电磁炉', '电视', '开始', '洗衣机', '电脑', '冰箱', '衣柜'],
+    timer: null,
+    n: 0
+  }
+  methods = {
+    btn(e) {
+      this.n = Math.floor(Math.random() * this.arr.length)
+    }
+  }
 }
 </script>
+<style lang="less">
+.list {
+width: 630rpx;
+}
+.list .li {
+  float: left;
+  background: #f09;
+  width: 150rpx;
+  height: 150rpx;
+  text-align: center;
+  line-height: 150rpx;
+  color: #fff;
+  font-size: 32rpx;
+  margin: 5rpx;
+  transition: 0.5s;
+ }
+ .list .li.active {
+  background: #53d4fe;
+}
+ .btn {
+  cursor: pointer;
+ }
+</style>

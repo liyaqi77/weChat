@@ -9,10 +9,12 @@
           </view>
       </view>
     </view>
-      <view clas="moview-container aaa">
+     <view class="moview-container">
         <moveComponents/>
         <moveComponents/>
-    </view>
+        <moveComponents/>
+     </view>
+       
   </view>
 </template>
 <script>
@@ -34,12 +36,14 @@ export default class Index extends wepy.component {
 }
 .move-head{
     display: flex;
-    padding: 10rpx 0;
+    padding: 15rpx;
     align-items: center;
     justify-content: space-between;
+    font-size: 30rpx;
 }
 .slogan{
-    font-size: 25rpx;
+    font-size: 32rpx;
+    padding:0 10rpx;
 }
 .more-text{
     vertical-align: middle;
@@ -47,12 +51,14 @@ export default class Index extends wepy.component {
     color: #1f4ba5;
 }
 .more-img{
-    font-size: 25rpx;
+    font-size: 23rpx;
+    padding: 0 5rx;
     color: #1f4ba5;
     vertical-align: middle;
 }
 .moview-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
 </style>

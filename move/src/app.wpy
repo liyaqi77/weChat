@@ -19,10 +19,24 @@ export default class extends wepy.app {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: '电影',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      selectedColor: 'pink',
+      list: [
+        {
+          pagePath: 'pages/star',
+          text: '首页'
+        },
+        {
+          pagePath: 'pages/index',
+          text: '电影'
+        }
+      ]
     }
   }
   globalData = {
-    userInfo: null
+    userInfo: null,
+    database: 'http://t.yushu.im'
   }
   constructor () {
     super()
